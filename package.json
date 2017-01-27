@@ -1,7 +1,7 @@
 {
-  "name": "delegation",
+  "name": "intelligent-design",
   "version": "0.0.1",
-  "description": "A library for delegation",
+  "description": "A library which provides some alternatives to inheritance",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mjewell/delegation.git"
+    "url": "https://github.com/mjewell/intelligent-design.git"
   },
   "keywords": [],
   "author": "Michael Jewell (http://github.com/mjewell)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mjewell/delegation/issues"
+    "url": "https://github.com/mjewell/intelligent-design/issues"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.34",

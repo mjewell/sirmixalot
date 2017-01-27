@@ -33,9 +33,9 @@ function createDelegateMethodPropertyDescriptor(delegateePropName: string, propN
   };
 }
 
-function addDelegateMethod(delegator: any, delegateePropName: string, toPropName: string, fromPropName: string) {
+function addDelegateMethod(receiver: any, delegateePropName: string, toPropName: string, fromPropName: string) {
   Object.defineProperty(
-    delegator.prototype,
+    receiver,
     toPropName,
     createDelegateMethodPropertyDescriptor(delegateePropName, fromPropName)
   );
@@ -54,10 +54,12 @@ export function delegate(
   propDescriptors.forEach(propDescriptor => {
     const { fromPropName, toPropName } = getPropNames(propDescriptor);
 
-    if (!options.overwrite && delegator.prototype.hasOwnProperty(toPropName)) {
+    const receiver = delegator.prototype ? delegator.prototype : delegator;
+
+    if (!options.overwrite && receiver.hasOwnProperty(toPropName)) {
       throw new Error(`Property '${toPropName}' is already defined on ${delegator.name}`);
     }
 
-    addDelegateMethod(delegator, delegateePropName, toPropName, fromPropName);
+    addDelegateMethod(receiver, delegateePropName, toPropName, fromPropName);
   });
 }
