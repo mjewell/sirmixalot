@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mjewell/intelligent-design.git"
+    "url": "git+https://github.com/mjewell/intelligent-design.git"
   },
   "keywords": [],
   "author": "Michael Jewell (http://github.com/mjewell)",
@@ -35,5 +35,9 @@
     "tslint-react": "^1.0.0",
     "typescript": "^2.1.5"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "homepage": "https://github.com/mjewell/intelligent-design#readme",
+  "directories": {
+    "test": "test"
+  }
 }
