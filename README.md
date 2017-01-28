@@ -1,8 +1,4 @@
-# Intelligent Design
-
-Your code should be best explained by an intelligent cause, not an undirected
-process. Inheritance isn't going to make your code-base evolve well. Great code
-arises from... `intelligent-design`.
+# Sir Mix-a-Lot
 
 Using composition over inheritance has been proposed many times and has been
 shown to result in code which is much more flexible to changing requirements.

@@ -1,7 +1,7 @@
 {
-  "name": "intelligent-design",
+  "name": "sirmixalot",
   "version": "0.0.2",
-  "description": "Your code should be best explained by an intelligent cause, not an undirected process. Inheritance isn't going to make your code-base evolve well. Great code arises from... intelligent-design.",
+  "description": "Utilities for making it easier to use some alternatives to inheritance",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mjewell/intelligent-design.git"
+    "url": "git+https://github.com/mjewell/sirmixalot.git"
   },
   "keywords": [],
   "author": "Michael Jewell (http://github.com/mjewell)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mjewell/intelligent-design/issues"
+    "url": "https://github.com/mjewell/sirmixalot/issues"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.34",
@@ -36,7 +36,7 @@
     "typescript": "^2.1.5"
   },
   "dependencies": {},
-  "homepage": "https://github.com/mjewell/intelligent-design#readme",
+  "homepage": "https://github.com/mjewell/sirmixalot#readme",
   "directories": {
     "test": "test"
   }
