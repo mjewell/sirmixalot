@@ -29,13 +29,13 @@ describe('delegate', () => {
     it('should delegate methods', () => {
       class Delegator {
         public delegatee = new Delegatee();
+
+        public doSomething: () => number;
       }
 
       delegate(Delegator, 'delegatee', ['doSomething']);
 
-      type ExtendedDelegator = Delegator & { doSomething(): number };
-
-      const delegator = new Delegator() as ExtendedDelegator;
+      const delegator = new Delegator();
 
       assert.equal(delegator.doSomething(), 1);
     });
@@ -43,13 +43,13 @@ describe('delegate', () => {
     it('should delegate properties', () => {
       class Delegator {
         public delegatee = new Delegatee();
+
+        public x: number;
       }
 
       delegate(Delegator, 'delegatee', ['x']);
 
-      type ExtendedDelegator = Delegator & { x: number };
-
-      const delegator = new Delegator() as ExtendedDelegator;
+      const delegator = new Delegator();
 
       assert.equal(delegator.x, 1);
     });
@@ -68,28 +68,28 @@ describe('delegate', () => {
 
     it('should delegate methods', () => {
       class Delegator {
-        public delegatee = new Delegatee();
+        public delegatee = delegatee;
+
+        public doSomething: () => number;
       }
 
       delegate(Delegator, 'delegatee', ['doSomething']);
 
-      type ExtendedDelegator = Delegator & { doSomething(): number };
-
-      const delegator = new Delegator() as ExtendedDelegator;
+      const delegator = new Delegator();
 
       assert.equal(delegator.doSomething(), 1);
     });
 
     it('should delegate properties', () => {
       class Delegator {
-        public delegatee = new Delegatee();
+        public delegatee = delegatee;
+
+        public x: number;
       }
 
       delegate(Delegator, 'delegatee', ['x']);
 
-      type ExtendedDelegator = Delegator & { x: number };
-
-      const delegator = new Delegator() as ExtendedDelegator;
+      const delegator = new Delegator();
 
       assert.equal(delegator.x, 1);
     });
@@ -160,13 +160,15 @@ describe('delegate', () => {
   it('should delegate all properties listed', () => {
     class Delegator {
       public delegatee = new Delegatee();
+
+      public x: number;
+      public doSomething: () => number;
+      public setSomething: (x: number) => void;
     }
 
     delegate(Delegator, 'delegatee', ['x', 'doSomething', 'setSomething']);
 
-    type ExtendedDelegator = Delegator & IDelegatee;
-
-    const delegator = new Delegator() as ExtendedDelegator;
+    const delegator = new Delegator();
 
     assert.equal(delegator.x, 1);
     assert.equal(delegator.doSomething(), 1);
@@ -243,13 +245,12 @@ describe('delegate', () => {
     class Delegator {
       public delegatee = new Delegatee();
       public x = 0;
+      public doSomething: () => number;
     }
 
     delegate(Delegator, 'delegatee', ['doSomething']);
 
-    type ExtendedDelegator = Delegator & { doSomething(): number };
-
-    const delegator = new Delegator() as ExtendedDelegator;
+    const delegator = new Delegator();
 
     assert.equal(delegator.doSomething(), 1);
     assert.equal(delegator.x, 0);
